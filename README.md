@@ -3,3 +3,24 @@
 
 # Cashy
 ~
+
+### Get Start with This Project
+Clone this project
+```git
+git clone https://github.com/bonifasiustrg/CashyBackend
+```
+
+Open Terminal
+```bash
+cd <Cloned Repo Directory>
+```
+
+install composer
+```git
+composer install
+```
+
+### How to run the server?
+```git
+php artisan serve
+```

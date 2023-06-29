@@ -20,6 +20,16 @@ install composer
 composer install
 ```
 
+### Running migrations (load the database)
+- Duplicate .env.example file and rename it .env
+- On line: DB_DATABASE=laravel
+  Replace 'laravel' with your local database, you can create new database
+- Run this command
+```git
+php artisan migrate
+```
+
+
 ### How to run the server?
 ```git
 php artisan serve

@@ -15,7 +15,7 @@ Open Terminal
 cd <Cloned Repo Directory>
 ```
 
-install composer
+install composer & depedencies
 ```git
 composer install
 ```
@@ -29,8 +29,12 @@ composer install
 php artisan migrate
 ```
 
-
-### How to run the server?
+### How to run web backend?
+- Generate app key
+```git
+php artisan key:generate
+``` 
+- Running server
 ```git
 php artisan serve
 ```

@@ -9,5 +9,5 @@ class Pemasukan_verified extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['desc', 'created_at', 'nominal'];
+    protected $fillable = ['desc', 'created_date', 'nominal'];
 }

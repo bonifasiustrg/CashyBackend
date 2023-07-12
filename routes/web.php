@@ -16,3 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resource('/account', AccountController::class)->except(['create', 'edit']);
+Route::resource('/category', CategoryController::class)->except(['create', 'edit']);
+Route::resource('/pemasukanpending', PemasukanPendingController::class)->except(['create', 'edit']);
+Route::resource('/pemasukanverified', PemasukanVerifiedController::class)->except(['create', 'edit']);
+Route::resource('/pengeluaran', PengeluaranController::class)->except(['create', 'edit']);

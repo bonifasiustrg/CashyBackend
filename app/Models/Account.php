@@ -9,5 +9,5 @@ class Account extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['username', 'password', 'nim', 'role'];
+    protected $fillable = ['username', 'password', 'nim', 'id_role'];
 }

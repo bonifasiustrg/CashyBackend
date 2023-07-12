@@ -15,8 +15,9 @@ return new class extends Migration
             $table->id('id_pengeluaran');
             $table->string('title');
             $table->string('desc');
-            $table->date('created_at')->default(now());
+            $table->date('created_date')->default(now());
             $table->foreignId('id_admin');
+            $table->timestamps();
         });
         Schema::table('pengeluaran', function (Blueprint $table) {
             $table->foreign('id_admin')->references('id_account')->on('accounts');

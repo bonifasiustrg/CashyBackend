@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id('id_pemasukan');
             $table->foreignId('id_payer');
             $table->string('desc');
-            $table->date('created_at')->default(now());
+            $table->date('created_date')->default(now());
             $table->integer('nominal');
             $table->foreignId('id_acceptedBy');
         });

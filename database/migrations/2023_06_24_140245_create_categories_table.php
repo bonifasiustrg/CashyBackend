@@ -13,11 +13,13 @@ return new class extends Migration
     {
         Schema::create('categories', function (Blueprint $table) {
             $table->id('id_category');
-            $table->string('category_name');
-            $table->date('created_at')->default(now());
+            $table->string('category_name')->unique();
+            $table->date('created_date')->default(now());
             $table->string('desc');
-            $table->string('category_status');
+            $table->enum('category_status', ['ordinary', 'unique']);
             $table->foreignId('id_admin');
+            $table->date('deadline_date');
+            $table->timestamps();
         });
         Schema::table('categories', function (Blueprint $table) {
             $table->foreign('id_admin')->references('id_account')->on('accounts');

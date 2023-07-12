@@ -9,5 +9,5 @@ class Pengeluaran extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'desc', 'created_at'];
+    protected $fillable = ['title', 'desc', 'created_date'];
 }

@@ -9,5 +9,5 @@ class Pemasukan_pending extends Model
 {
     use HasFactory;
     
-    protected $fillable = ['desc', 'created_at', 'nominal', 'status'];
+    protected $fillable = ['desc', 'created_date', 'nominal', 'status'];
 }

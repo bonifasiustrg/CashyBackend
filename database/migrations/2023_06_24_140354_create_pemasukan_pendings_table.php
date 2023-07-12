@@ -15,10 +15,11 @@ return new class extends Migration
             $table->id('id_pemasukan');
             $table->foreignId('id_payer');
             $table->string('desc');
-            $table->date('created_at')->default(now());
-            $table->integer('nominal');
+            $table->date('created_date')->default(now());
+            $table->bigInteger('nominal');
             $table->enum('status', ['overdue', 'ontime']);
             $table->foreignId('id_category');
+            $table->timestamps();
         });
         Schema::table('pemasukan_pending', function (Blueprint $table) {
             $table->foreign('id_payer')->references('id_account')->on('accounts');

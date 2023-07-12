@@ -13,11 +13,12 @@ return new class extends Migration
     {
         Schema::create('accounts', function (Blueprint $table) {
             $table->id('id_account');
-            $table->string('username');
+            $table->string('username')->unique();
             $table->string('password');
             $table->integer('nim');
-            $table->enum('role', ['admin', 'user']);
+            $table->enum('id_role', [1, 2]);
             $table->foreignId('id_createdBy');
+            $table->timestamps();
         });
         Schema::table('accounts', function (Blueprint $table) {
             $table->foreign('id_createdBy')->references('id_account')->on('accounts');

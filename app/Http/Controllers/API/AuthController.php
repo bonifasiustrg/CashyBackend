@@ -15,7 +15,7 @@ class AuthController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'name' => 'required',
-            'email' => 'required|email',
+            'nim' => 'required|numeric',
             'password' => 'required',
             'confirm_password' => 'required|same:password'
         ]);
@@ -45,11 +45,11 @@ class AuthController extends Controller
 
     public function login(Request $request)
     {
-        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
+        if (Auth::attempt(['nim' => $request->nim, 'password' => $request->password])) {
             $auth = Auth::user();
             $success['token'] = $auth->createToken('auth_token')->plainTextToken;
             $success['name'] = $auth->name;
-            $success['email'] = $auth->email;
+            $success['nim'] = $auth->nim;
 
             return response()->json([
                 'success' => true,
@@ -60,7 +60,7 @@ class AuthController extends Controller
 
             return response()->json([
                 'success' => false,
-                'message' => 'Login gagal, cek email dan password',
+                'message' => 'Login gagal, cek nim dan password',
                 'data' => null
             ]);
         }

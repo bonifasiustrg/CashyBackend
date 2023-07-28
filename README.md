@@ -5,8 +5,7 @@
 ~
 This laravel project also implementing:
 - Arsitektur MVC (Model-View-Controller)
-- Login Authentication using Laravel Sanctum
-- Token Bearer with Laravel Passport
+- Login Authentication and Token Bearer for protecting the route using Laravel Sanctum
 
 ### Get Start with This Project
 Clone this project

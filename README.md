@@ -3,6 +3,10 @@
 
 # Cashy
 ~
+This laravel project also implementing:
+- Arsitektur MVC (Model-View-Controller)
+- Login Authentication using Laravel Sanctum
+- Token Bearer with Laravel Passport
 
 ### Get Start with This Project
 Clone this project

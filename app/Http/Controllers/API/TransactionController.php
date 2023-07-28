@@ -47,6 +47,7 @@ class TransactionController extends Controller
                 'nim' => 'required',
                 'tanggal' => 'required',
                 'category_id' => 'required',
+                'harga' => 'required',
                 'image' => 'required',
                 'description' => 'sometimes',
             ]);
@@ -56,6 +57,7 @@ class TransactionController extends Controller
                 'nim' => $request->nim,
                 'tanggal' => $request->tanggal,
                 'category_id' => $request->category_id,
+                'harga' => $request->harga,
                 'image' => $request->image,
                 'description' => $request->description,
             ]);
@@ -135,6 +137,7 @@ class TransactionController extends Controller
                 'nim' => 'required',
                 'tanggal' => 'required',
                 'category_id' => 'required',
+                'harga' => 'required',
                 'image' => 'required',
                 'description' => 'sometimes',
             ]);
@@ -146,6 +149,7 @@ class TransactionController extends Controller
                 'nim' => $request->nim,
                 'tanggal' => $request->tanggal,
                 'category_id' => $request->category_id,
+                'harga' => $request->harga,
                 'image' => $request->image,
                 'description' => $request->description,
             ]);

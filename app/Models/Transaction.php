@@ -17,6 +17,7 @@ class Transaction extends Model
         'nim',
         'tanggal',
         'category_id',
+        'harga',
         'image',
         'description',
         'status'

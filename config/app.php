@@ -156,6 +156,7 @@ return [
     */
 
     'providers' => ServiceProvider::defaultProviders()->merge([
+        Laravel\Sanctum\SanctumServiceProvider::class,
         /*
          * Package Service Providers...
          */

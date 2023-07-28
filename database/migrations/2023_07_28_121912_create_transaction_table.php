@@ -17,19 +17,20 @@ return new class extends Migration
             $table->string('nim');
             $table->dateTime('tanggal');
             $table->unsignedBigInteger('category_id');
+            $table->float('harga');
             $table->text('image');
             $table->string('description');
             $table->string('status')->default('pending'); // Status default adalah "not_verified"
             $table->timestamps();
-
-            
+/* 
+    //TODO buat dulu tabel kategori
         // Tambahkan foreign key untuk kategori
         $table->foreign('category_id')
         ->references('id')
         ->on('categories')
         ->onDelete('cascade'); // Jika data di tabel categories dihapus, maka data yang memiliki foreign key yang terkait akan dihapus juga
+        */
         });
-        
     }
 
     /**

@@ -21,9 +21,15 @@ Route::post('register', [AuthController::class, 'register']);
 Route::post('login', [AuthController::class, 'login']);
 
 Route::middleware('auth:sanctum')->group(function () {
-    Route::get('/user', function (Request $request) {
-        return $request->user();
-    });
+    // Route::get('/user', function (Request $request) {
+    //     return $request->user();
+    // });
+
+    /* users */
+    Route::get('user', [AuthController::class, 'index']);
+    Route::get('user/{id}', [AuthController::class, 'show']); // show specified userby id
+    Route::post('user/update/{id}', [AuthController::class, 'update']); // update user
+    Route::delete('user/delete/{id}', [AuthController::class, 'destroy']); //delete specified user
 
     /* transaction */
     Route::get('transaction', [TransactionController::class, 'index']);  // show all transaction

@@ -12,18 +12,18 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('categories', function (Blueprint $table) {
-            $table->id('id_category');
+            $table->id();
             $table->string('category_name')->unique();
-            $table->date('created_date')->default(now());
             $table->string('desc');
-            $table->enum('category_status', ['ordinary', 'unique']);
-            $table->foreignId('id_admin');
-            $table->date('deadline_date');
+            $table->enum('category_status', ['active', 'nonactive']);
+            $table->dateTime('deadline_date');
+            $table->date('created_date')->default(now());
+            // $table->foreignId('id_admin');
             $table->timestamps();
         });
-        Schema::table('categories', function (Blueprint $table) {
-            $table->foreign('id_admin')->references('id_account')->on('accounts');
-        });
+        // Schema::table('categories', function (Blueprint $table) {
+        //     $table->foreign('id_admin')->references('id_account')->on('accounts');
+        // });
     }
 
     /**

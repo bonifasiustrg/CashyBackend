@@ -18,13 +18,13 @@ return new class extends Migration
             $table->date('created_date')->default(now());
             $table->bigInteger('nominal');
             $table->enum('status', ['overdue', 'ontime']);
-            $table->foreignId('id_category');
+            $table->foreignId('category_id');
             $table->timestamps();
         });
-        Schema::table('pemasukan_pending', function (Blueprint $table) {
-            $table->foreign('id_payer')->references('id_account')->on('accounts');
-            $table->foreign('id_category')->references('id_category')->on('categories');
-        });
+        // Schema::table('pemasukan_pending', function (Blueprint $table) {
+        //     $table->foreign('id_payer')->references('id_account')->on('accounts');
+        //     $table->foreign('id_category')->references('id_category')->on('categories');
+        // });
     }
 
     /**

@@ -4,6 +4,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\API\TransactionController;
+use App\Http\Controllers\CategoryController;
+use App\Models\Category;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,5 +41,12 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::delete('transaction/delete/{id}', [TransactionController::class, 'destroy']); //delete specified transaction
     Route::put('/transaction/{id}/status', [TransactionController::class, 'changeTransactionStatus']); // change transaction status
     Route::get('/transaction/month/{month}/{year}', [TransactionController::class, 'showTransactionByMonth']); //show transaction by month of its date
+    
+    /* Category */
+    Route::get('category', [CategoryController::class, 'index']);  // show all transaction
+    Route::post('category', [CategoryController::class, 'store']); // create new transaction
+    Route::post('category/update/{id}', [CategoryController::class, 'update']); // update transaction
+    Route::delete('category/delete/{id}', [CategoryController::class, 'destroy']); //delete specified transaction
+
 });
 

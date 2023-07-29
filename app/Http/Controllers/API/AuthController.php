@@ -17,7 +17,7 @@ class AuthController extends Controller
             'name' => 'required',
             'nim' => 'required|numeric',
             'divisi' => 'required',
-            'role' => 'required',
+            'role' => 'sometimes',
             'password' => 'required',
             'confirm_password' => 'required|same:password'
         ]);
@@ -31,6 +31,11 @@ class AuthController extends Controller
         }
 
         $input = $request->all();
+        // Set nilai default untuk 'role' jika kosong
+        if (empty($input['role'])) {
+            $input['role'] = 'anggota';
+        }
+
         $input['password'] = bcrypt($input['password']);
         $user = User::create($input);
 
@@ -61,7 +66,7 @@ class AuthController extends Controller
                 'message' => 'Login berhasil',
                 'data' => $success
             ]);
-        } else { 
+        } else {
 
             return response()->json([
                 'success' => false,

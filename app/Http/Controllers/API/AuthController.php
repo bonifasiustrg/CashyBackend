@@ -16,6 +16,8 @@ class AuthController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => 'required',
             'nim' => 'required|numeric',
+            'divisi' => 'required',
+            'role' => 'required',
             'password' => 'required',
             'confirm_password' => 'required|same:password'
         ]);
@@ -32,8 +34,11 @@ class AuthController extends Controller
         $input['password'] = bcrypt($input['password']);
         $user = User::create($input);
 
-        $success['token'] = $user->createToken('auth_token')->plainTextToken;
+        // $success['token'] = $user->createToken('auth_token')->plainTextToken;
         $success['name'] = $user->name;
+        $success['nim'] = $user->nim;
+        $success['divisi'] = $user->divisi;
+        $success['role'] = $user->role;
 
         return response()->json([
             'success' => true,

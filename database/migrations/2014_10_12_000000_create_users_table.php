@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('nim')->unique();
+            $table->string('divisi');
+            $table->string('role');
             $table->timestamp('nim_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
